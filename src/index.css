@@ -22,3 +22,31 @@ body {
 ::-webkit-scrollbar-track {
   background: #0b0b0b;
 }
+
+.orbit-ring {
+  width: 340px;
+  height: 340px;
+  border-radius: 999px;
+  border: 2px dotted rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 60px rgba(99, 102, 241, 0.22);
+  opacity: 0.9;
+}
+
+.tech-bubble {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.12);
+  transition: transform 0.25s ease;
+}
+
+.tech-bubble:hover {
+  transform: scale(1.06);
+}
+

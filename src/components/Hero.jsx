@@ -27,7 +27,8 @@ export default function Hero() {
             >
               Hi, I’m{" "}
               <span className="bg-gradient-to-r from-blue-400 to-pink-500 bg-clip-text text-transparent">
-              <br />MALIK REHAN
+                <br />
+                MALIK REHAN
               </span>
               <br />
               Full Stack Developer
@@ -63,10 +64,16 @@ export default function Hero() {
               </motion.a>
             </motion.div>
 
-            <motion.div variants={fadeInUp(18)} className="flex items-center gap-4 pt-2">
+            <motion.div
+              variants={fadeInUp(18)}
+              className="flex items-center gap-4 pt-2"
+            >
               {[
                 { Icon: Github, link: "https://github.com/MalikRehan0606" },
-                {  Icon: Instagram, link:"https://www.instagram.com/m_a_l_i_k_c_0_d_e_s/" },
+                {
+                  Icon: Instagram,
+                  link: "https://www.instagram.com/m_a_l_i_k_c_0_d_e_s/",
+                },
                 { Icon: Mail, link: "#contact" },
               ].map(({ Icon, link }, i) => (
                 <motion.a
@@ -82,49 +89,94 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={pop(0.92, 0.85)} initial="hidden" animate="show" className="relative">
-            <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-r from-blue-500/30 to-pink-500/30 blur-2xl" />
-            <motion.div className="relative rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-xl p-6">
-            <div className="rounded-3xl overflow-hidden border border-white/10 bg-black">
-  <div className="relative w-full h-[360px] overflow-hidden">
-    <img
-      src="/malik.png"
-      className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-60"
-      alt="bg"
-    />
-    <motion.img
-      initial={{ scale: 1.14, opacity: 0.7 }}
-      animate={{ scale: 1, opacity: 0.95 }}
-      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      src="/malik.png"
-      className="relative w-full h-full object-contain"
-      alt="Malik"
-    />
-  </div>
-</div>
+          <motion.div
+            variants={pop(0.92, 0.85)}
+            initial="hidden"
+            animate="show"
+            className="relative"
+          >
+            <div className="flex items-center justify-center">
+              <div className="relative w-[400px] h-[400px]">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="orbit-ring"></div>
+                </div>
 
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+                >
+                  <div className="relative w-[340px] h-[340px]">
+                    {[
+                     { src: "/tech/React.svg", x: "50%", y: "-6%" }, 
+                     { src: "/tech/JavaScript.svg", x: "85%", y: "20%" },
+                      { src: "/tech/Python.svg", x: "92%", y: "55%" }, 
+                      { src: "/tech/Node.svg", x: "78%", y: "75%" }, 
+                      { src: "/tech/Firebase.svg", x: "50%", y: "90%" }, 
+                      { src: "/tech/HTML5.svg", x: "15%", y: "85%" },
+                       { src: "/tech/CSS3.svg", x: "-2%", y: "55%" }, 
+                       { src: "/tech/Tailwind CSS.svg", x: "3%", y: "15%" },
+                    ].map((t, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute -translate-x-1/2 -translate-y-1/2"
+                        style={{ left: t.x, top: t.y }}
+                        animate={{ rotate: -360 }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 18,
+                          ease: "linear",
+                        }}
+                      >
+                        <div className="tech-bubble">
+                          <img
+                            src={t.src}
+                            className="w-9 h-9 object-contain"
+                            alt="tech"
+                          />
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
 
-              <div className="grid grid-cols-3 gap-3 mt-4">
-                {[
-                  { n: "1+", t: "Years Exp" },
-                  { n: "10+", t: "Projects" },
-                  { n: "5+", t: "Skills" },
-                ].map((x) => (
-                  <motion.div
-                    key={x.t}
-                    {...hoverLift}
-                    {...tap}
-                    className="rounded-2xl border border-white/10 bg-black/30 p-4"
-                  >
-                    <p className="text-2xl font-bold">{x.n}</p>
-                    <p className="text-sm text-white/60">{x.t}</p>
-                  </motion.div>
-                ))}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.img
+                    initial={{ scale: 1.1, opacity: 0.7 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                    src="/malik.png"
+                    className="w-[290px] h-[290px] rounded-full object-cover border border-white/10"
+                    alt="Malik"
+                  />
+                </div>
               </div>
-            </motion.div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 mt-6">
+              {[
+                { n: "1+", t: "Years Exp" },
+                { n: "10+", t: "Projects" },
+                { n: "5+", t: "Skills" },
+              ].map((x) => (
+                <motion.div
+                  key={x.t}
+                  {...hoverLift}
+                  {...tap}
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-4"
+                >
+                  <p className="text-2xl font-bold">{x.n}</p>
+                  <p className="text-sm text-white/60">{x.t}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
 }
+
+
+
+
