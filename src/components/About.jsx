@@ -8,7 +8,7 @@ export default function About() {
       <div className="grid lg:grid-cols-2 gap-6">
         <motion.div variants={fadeInUp(18)} className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
           <p className="text-white/70 leading-relaxed">
-            Edit this section with your details. This layout is made to feel premium, smooth, and clean.
+          I’m a passionate Full Stack Developer who builds modern, fast, and responsive web applications with clean UI and secure backend systems. I focus on performance, scalability, and creating smooth user experiences.
           </p>
         </motion.div>
 

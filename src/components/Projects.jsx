@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { fadeInUp, hoverLift, tap } from "./motion";
 
 const projects = [
-  { title: "Typing Test App", desc: "Typing test with leaderboard, stats, and replays.", tech: "React • Firebase • Tailwind", live: "#", code: "#" },
-  { title: "Online Grocery Store", desc: "E-commerce grocery store UI with cart & wishlist.", tech: "HTML • CSS • JS", live: "#", code: "#" },
-  { title: "Attendance System", desc: "Automated attendance for web and desktop apps.", tech: "Python • Web App", live: "#", code: "#" }
+  { title: "TypeZilla", desc: "Typing test with leaderboard, stats, and replays.", tech: "React • Firebase • Tailwind", live: "https://typezilla.qzz.io/",  },
+  { title: "Car-AI", desc: "Built CarAI Marketplace, a generative AI-powered web platform to browse and manage car listings with image-based search, auto-filled car details for admins, test-drive booking, and a full admin dashboard.", tech: "Next.js, Firebase, Razorpay, Tailwind.", live: "https://car-ai-omega.vercel.app/" },
+  { title: "Caliber Sports Club", desc: "Built a Multi-Coaching Management Platform for a cricket academy with player enrollment, membership purchases, community forum, cricket gear store, and private staff dashboards for managing users, schedules, and content.", tech: "Next.js • Firebase, React.", live: "https://www.calibersportsclub.in/",}
 ];
 
 export default function Projects() {
@@ -24,10 +24,7 @@ export default function Projects() {
                 className="rounded-2xl bg-white text-black px-4 py-2 font-semibold hover:opacity-90 transition">
                 Live
               </motion.a>
-              <motion.a {...tap} whileHover={{ scale: 1.02 }} href={p.code}
-                className="rounded-2xl border border-white/20 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 transition">
-                Code
-              </motion.a>
+              
             </div>
           </motion.div>
         ))}

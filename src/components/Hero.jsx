@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Github, Instagram, Mail, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp, pop, hoverLift, tap } from "./motion";
 
@@ -27,7 +27,7 @@ export default function Hero() {
             >
               Hi, I’m{" "}
               <span className="bg-gradient-to-r from-blue-400 to-pink-500 bg-clip-text text-transparent">
-                Your Name
+              <br />MALIK REHAN
               </span>
               <br />
               Full Stack Developer
@@ -65,8 +65,8 @@ export default function Hero() {
 
             <motion.div variants={fadeInUp(18)} className="flex items-center gap-4 pt-2">
               {[
-                { Icon: Github, link: "#" },
-                { Icon: Linkedin, link: "#" },
+                { Icon: Github, link: "https://github.com/MalikRehan0606" },
+                {  Icon: Instagram, link:"https://www.instagram.com/m_a_l_i_k_c_0_d_e_s/" },
                 { Icon: Mail, link: "#contact" },
               ].map(({ Icon, link }, i) => (
                 <motion.a
@@ -85,16 +85,24 @@ export default function Hero() {
           <motion.div variants={pop(0.92, 0.85)} initial="hidden" animate="show" className="relative">
             <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-r from-blue-500/30 to-pink-500/30 blur-2xl" />
             <motion.div className="relative rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-xl p-6">
-              <div className="rounded-3xl overflow-hidden border border-white/10 bg-black">
-                <motion.img
-                  initial={{ scale: 1.14, opacity: 0.7 }}
-                  animate={{ scale: 1, opacity: 0.95 }}
-                  transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="w-full h-[360px] object-cover"
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
-                  alt="Laptop"
-                />
-              </div>
+            <div className="rounded-3xl overflow-hidden border border-white/10 bg-black">
+  <div className="relative w-full h-[360px] overflow-hidden">
+    <img
+      src="/malik.png"
+      className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-60"
+      alt="bg"
+    />
+    <motion.img
+      initial={{ scale: 1.14, opacity: 0.7 }}
+      animate={{ scale: 1, opacity: 0.95 }}
+      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+      src="/malik.png"
+      className="relative w-full h-full object-contain"
+      alt="Malik"
+    />
+  </div>
+</div>
+
 
               <div className="grid grid-cols-3 gap-3 mt-4">
                 {[
