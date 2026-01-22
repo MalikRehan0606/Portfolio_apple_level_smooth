@@ -8,6 +8,29 @@ html {
 
 body {
   overflow-x: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(0, 170, 255, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(120, 0, 255, 0.14), transparent 55%),
+    radial-gradient(circle at 50% 90%, rgba(0, 255, 200, 0.08), transparent 60%),
+    #050816;
+  background-attachment: fixed;
+  color: white;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 ::-webkit-scrollbar {
@@ -49,4 +72,3 @@ body {
 .tech-bubble:hover {
   transform: scale(1.06);
 }
-

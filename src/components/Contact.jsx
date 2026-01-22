@@ -34,11 +34,12 @@ export default function Contact() {
     <Section id="contact" title="Contact" subtitle="Send a message and I’ll reply soon.">
       <div className="grid lg:grid-cols-2 gap-6">
         <motion.div variants={fadeInUp(18)} className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
-          <p className="text-white/70 leading-relaxed">Update your email, github, linkedin in this section.</p>
+          <p className="text-white/70 leading-relaxed">Below is my contacts Email, Github, Instagram. Feel free to contact me</p>
           <div className="mt-6 space-y-3 text-white/70">
-            <p>Email: <span className="text-white">your@email.com</span></p>
-            <p>GitHub: <span className="text-white">github.com/username</span></p>
-            <p>LinkedIn: <span className="text-white">linkedin.com/in/username</span></p>
+            <p>Email: <span className="text-white">imalikrehan8@gmail.com</span></p>
+            <p>GitHub: <span className="text-white">https://github.com/MalikRehan0606</span></p>
+            <p>Instagram: <span className="text-white">https://www.instagram.com/m_a_l_i_k_c_0_d_e_s/</span></p>
+            <p>Phone: <span className="text-white">+918105659121</span></p>
           </div>
         </motion.div>
 

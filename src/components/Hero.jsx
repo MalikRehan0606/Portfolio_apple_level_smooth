@@ -1,8 +1,78 @@
 import { Github, Instagram, Mail, Download } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 import { staggerContainer, fadeInUp, pop, hoverLift, tap } from "./motion";
 
 export default function Hero() {
+    const roles = [
+      "Software Developer",
+      "Web Developer",
+      "UI/UX Designer",
+      "Full Stack Developer",
+    ];
+  
+    const [roleIndex, setRoleIndex] = useState(0);
+    const [scrambled, setScrambled] = useState(roles[0]);
+  
+    const rafRef = useRef(null);
+    const intervalRef = useRef(null);
+    const scrambledRef = useRef(roles[0]);
+  
+    useEffect(() => {
+      scrambledRef.current = scrambled;
+    }, [scrambled]);
+  
+    useEffect(() => {
+      const chars =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+  
+      const scrambleTo = (newText) => {
+        const oldText = scrambledRef.current;
+        const maxLen = Math.max(oldText.length, newText.length);
+        let frame = 0;
+        const totalFrames = 52;
+  
+        const update = () => {
+          frame++;
+          const progress = frame / totalFrames;
+  
+          let out = "";
+          for (let i = 0; i < maxLen; i++) {
+            const to = newText[i] || " ";
+  
+            if (progress > i / maxLen) out += to;
+            else out += chars[Math.floor(Math.random() * chars.length)];
+          }
+  
+          setScrambled(out);
+  
+          if (frame < totalFrames) {
+            rafRef.current = requestAnimationFrame(update);
+          } else {
+            setScrambled(newText);
+            scrambledRef.current = newText;
+          }
+        };
+  
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = requestAnimationFrame(update);
+      };
+  
+      intervalRef.current = setInterval(() => {
+        setRoleIndex((prev) => {
+          const next = (prev + 1) % roles.length;
+          scrambleTo(roles[next]);
+          return next;
+        });
+      }, 2500);
+  
+      return () => {
+        cancelAnimationFrame(rafRef.current);
+        clearInterval(intervalRef.current);
+      };
+    }, []);
+  
+
   return (
     <section id="home" className="pt-28 pb-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -14,7 +84,7 @@ export default function Hero() {
             className="space-y-6"
           >
             <motion.div
-              variants={fadeInUp(14)}
+              variants={fadeInUp(20)}
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70"
             >
               <span className="w-2 h-2 rounded-full bg-green-400" />
@@ -31,7 +101,9 @@ export default function Hero() {
                 MALIK REHAN
               </span>
               <br />
-              Full Stack Developer
+              a
+              <br />
+              <span className="block">{scrambled}</span>
             </motion.h1>
 
             <motion.p
@@ -108,14 +180,16 @@ export default function Hero() {
                 >
                   <div className="relative w-[340px] h-[340px]">
                     {[
-                     { src: "/tech/React.svg", x: "50%", y: "-6%" }, 
-                     { src: "/tech/JavaScript.svg", x: "85%", y: "20%" },
-                      { src: "/tech/Python.svg", x: "92%", y: "55%" }, 
-                      { src: "/tech/Node.svg", x: "78%", y: "75%" }, 
-                      { src: "/tech/Firebase.svg", x: "50%", y: "90%" }, 
+                      { src: "/tech/React.svg", x: "50%", y: "-6%" },
+                      { src: "/tech/Java.svg", x: "22%", y: "-5%" },
+                      { src: "/tech/TypeScript.svg", x: "74%", y: "3%" },                      
+                      { src: "/tech/JavaScript.svg", x: "90%", y: "30%" },
+                      { src: "/tech/Python.svg", x: "92%", y: "55%" },
+                      { src: "/tech/Node.svg", x: "78%", y: "75%" },
+                      { src: "/tech/Firebase.svg", x: "50%", y: "90%" },
                       { src: "/tech/HTML5.svg", x: "15%", y: "85%" },
-                       { src: "/tech/CSS3.svg", x: "-2%", y: "55%" }, 
-                       { src: "/tech/Tailwind CSS.svg", x: "3%", y: "15%" },
+                      { src: "/tech/CSS3.svg", x: "-5%", y: "55%" },
+                      { src: "/tech/Tailwind CSS.svg", x: "0%", y: "15%" },
                     ].map((t, i) => (
                       <motion.div
                         key={i}
@@ -145,7 +219,7 @@ export default function Hero() {
                     initial={{ scale: 1.1, opacity: 0.7 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                    src="/malik.png"
+                    src="/malik4.png"
                     className="w-[290px] h-[290px] rounded-full object-cover border border-white/10"
                     alt="Malik"
                   />
@@ -176,7 +250,3 @@ export default function Hero() {
     </section>
   );
 }
-
-
-
-

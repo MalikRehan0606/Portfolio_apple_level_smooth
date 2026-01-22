@@ -2,7 +2,7 @@ import Section from "./Section";
 import { motion } from "framer-motion";
 import { fadeInUp, hoverLift, tap } from "./motion";
 
-const skills = ["HTML","CSS","JavaScript","React","Tailwind CSS","Firebase","Node.js","NoSQL","Python","Java"];
+const skills = ["HTML","CSS","JavaScript","React","Tailwind CSS","Firebase","Node.js","NoSQL","Python","Java", "TypeScript"];
 
 export default function Skills() {
   return (
