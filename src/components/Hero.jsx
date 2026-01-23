@@ -103,7 +103,10 @@ export default function Hero() {
               <br />
               a
               <br />
-              <span className="block">{scrambled}</span>
+              <span className="block min-h-[1.2em]">
+  {scrambled}
+</span>
+
             </motion.h1>
 
             <motion.p
