@@ -103,9 +103,11 @@ export default function Hero() {
               <br />
               a
               <br />
-              <span className="block min-h-[1.2em] md:min-h-0">
+              <span className="inline-block min-h-[1.2em] min-w-[18ch] whitespace-nowrap">
   {scrambled}
 </span>
+
+
 
             </motion.h1>
 
