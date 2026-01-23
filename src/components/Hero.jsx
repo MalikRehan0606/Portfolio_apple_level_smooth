@@ -103,7 +103,7 @@ export default function Hero() {
               <br />
               a
               <br />
-              <span className="block min-h-[1.2em]">
+              <span className="block min-h-[1.2em] md:min-h-0">
   {scrambled}
 </span>
 
