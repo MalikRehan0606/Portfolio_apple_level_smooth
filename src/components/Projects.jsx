@@ -150,16 +150,22 @@ export default function Projects() {
 
                   <div>{!isLeft ? Card : null}</div>
                 </div>
-              );return (
+              );
+              return (
                 <div
                   key={idx}
-                  className="relative grid lg:grid-cols-2 gap-10 items-center"
+                  className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
                 >
-                  <div className="hidden lg:block">{isLeft ? Card : null}</div>
+                  <div className={`${isLeft ? "lg:block" : "hidden lg:block"}`}>
+                    {isLeft ? Card : null}
+                  </div>
               
-                  <div>{!isLeft ? Card : Card}</div>
+                  <div className={`${isLeft ? "lg:hidden" : "block"}`}>
+                    {Card}
+                  </div>
                 </div>
               );
+              
               
             })}
           </div>
