@@ -150,7 +150,17 @@ export default function Projects() {
 
                   <div>{!isLeft ? Card : null}</div>
                 </div>
+              );return (
+                <div
+                  key={idx}
+                  className="relative grid lg:grid-cols-2 gap-10 items-center"
+                >
+                  <div className="hidden lg:block">{isLeft ? Card : null}</div>
+              
+                  <div>{!isLeft ? Card : Card}</div>
+                </div>
               );
+              
             })}
           </div>
         </div>
