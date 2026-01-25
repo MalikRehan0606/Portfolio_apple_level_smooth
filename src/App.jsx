@@ -19,9 +19,22 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <div className="min-h-screen text-white relative overflow-x-hidden">
       <Loader show={loading} />
       <CursorGlow />
+
+      <div className="fixed inset-0 -z-10">
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          src="/bv.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
       <div className="absolute inset-0 opacity-30">
         <div className="absolute -top-40 left-10 w-[520px] h-[520px] bg-purple-600 rounded-full blur-[150px] animate-floaty" />
