@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: "Caliber Sports Club",
-    type: "UI/UX Design Concept",
+    type: "Interactive Web App",
     desc: "Built a Multi-Coaching Management Platform for a cricket academy with player enrollment, membership purchases, community forum, cricket gear store, and private staff dashboards for managing users, schedules, and content.",
     tags: ["Next.js", "Firebase", "React"],
     img: "/projects/cali.png",
@@ -32,7 +32,28 @@ const projects = [
     side: "right",
     color: "from-pink-500/30 to-purple-500/20",
   },
+  {
+    title: "Health Check",
+    type: "Interactive Web App",
+    desc: "Built a AI-powered health & nature assistant that identifies plants, animals, medicines, and health conditions from images or symptoms, with care tips and AI insights.Includes vitals tracking, doctor search by specialty, medicine scheduling, and secure user authentication.",
+    tags: ["TypeScript","CSS3","Next.js", "Firebase", "React"],
+    img: "/projects/health.png",
+    live: "https://www.x-way.in/",
+    side: "left",
+    color: "from-pink-500/30 to-purple-500/20",
+  },
+  {
+    title: "Housie Empire",
+    type: "Interactive Web App",
+    desc: "Built aHousie Empire is a live social gaming platform featuring Classic Housie (Tambola) alongside AI-powered Bollywood games like Swar Challenge and Dialogue Guessing.Built with role-based dashboards for Players, Organizers, and Owner, enabling real-time gameplay, hosting, and full platform control.",
+    tags: ["Tailwind CSS","Gen AI","Next.js","Firebase", "React"],
+    img: "/projects/housie.png",
+    live: "https://www.housiegame.in//",
+    side: "right",
+    color: "from-pink-500/30 to-purple-500/20",
+  },
 ];
+
 
 export default function Projects() {
   return (
